@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Lista de Empleados</h2>
+
+    <div class="container-btn">
+ 
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Buscar</mat-label>
+              <input matInput [formControl]="search" placeholder="Nombre" (keyup)="searchEmployees()">
+            </mat-form-field>
+        <a routerLink="/add-employees"><button mat-raised-button class="btn">Agregar empleado</button></a>
+    </div>
+    <app-table [columns]="displayedColumns" [data]="dataSource" (delete)="deleteEmployee($event)"></app-table>
+
+</div>
